@@ -18,4 +18,4 @@ Note with regard to Kaggle rules: I am still abiding by the rules to not share c
 
 
 Current standing:
-As of Jan. 30, 2014, I hold 1st place (under pseudoname Miranda) out of 96 teams with one month remaining in the competition.
+As of Jan. 30, 2014, I hold 1st place (under pseudoname Miranda) out of 96 teams with one month remaining in the competition. http://www.kaggle.com/c/conway-s-reverse-game-of-life/leaderboard
