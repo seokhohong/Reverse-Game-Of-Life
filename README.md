@@ -1,6 +1,7 @@
 Reverse Game Of Life
 ====================
 Dec 2013-Feb 2014: Entry into the Reverse Game Of Life competition on Kaggle.com 
+
 http://www.kaggle.com/c/conway-s-reverse-game-of-life
 
 
