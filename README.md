@@ -5,7 +5,7 @@ Dec 2013-Feb 2014: Entry into the Reverse Game Of Life competition on Kaggle.com
 http://www.kaggle.com/c/conway-s-reverse-game-of-life
 
 
-What's currently uploaded is one file of my program, the underlying representation of the Game of Life grid, which reveals nothing specific about my methods but still presents a critical component exemplifying the complexities of implementing my solution. The rest will be uploaded after the conclusion of the competition on March 3, 2014, along with more details about my methods.
+What's currently uploaded is one file of my program, the underlying representation of the Game of Life grid, which reveals nothing specific about my methods but still presents a critical component exemplifying the techniques of implementing my solution. The rest will be uploaded after the conclusion of the competition on March 3, 2014, along with more details about my methods.
 
 
 As data competitions generally go, an inevitable hurdle is time and space, and are perhaps the only major hurdles of this problem. Although about two-thirds of code is in Java, I've exported the calculation intensive portions to C for better performance (approximately 3x faster). The uploaded board.c shows the extent to which this code has been optimized, heavily exploiting bit operations to speed up both generation of boards and iteration through generations. The other parts of the program function similarly, capitalizing on lookup tables, bit manipulation, and fast hash tables (the main bottleneck in the computation is handled by the wonderfully fast cuckoo hashmap). Even calling rand() became a performance issue, which I subsequently replaced with an XOR-shift number generator. Of course, it's also multithreaded for maximum performance.
