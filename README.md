@@ -1,6 +1,7 @@
 Reverse Game Of Life
 ====================
-Dec 2013-Feb 2014: Entry into the Reverse Game Of Life competition on Kaggle.com http://www.kaggle.com/c/conway-s-reverse-game-of-life
+Dec 2013-Feb 2014: Entry into the Reverse Game Of Life competition on Kaggle.com 
+http://www.kaggle.com/c/conway-s-reverse-game-of-life
 
 
 What's currently uploaded is one file of my program, the underlying representation of the Game of Life grid, which reveals nothing specific about my methods but still presents a critical component exemplifying the complexities of implementing my solution. The rest will be uploaded after the conclusion of the competition on March 3, 2014, along with more details about my methods.
