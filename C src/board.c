@@ -8,6 +8,7 @@
 #include "board.h"
 #include <inttypes.h>
 #include "Endian.h"
+#include "Limits.h"
 
 #define __STDC_FORMAT_MACROS
 
@@ -47,7 +48,7 @@ void getRandomBoardOptimized(uint64_t* board)
 uint64_t* getRandomBoard()
 {
 	uint64_t* board = newBoard();
-	double frequency = (xorshf96() % 99) + 1; //between 1 and 99
+	double frequency = (rand() % 99) + 1; //between 1 and 99
 	for(int a = 0; a < BOARD_SIZE * BOARD_SIZE; a ++ )
 	{
 		int row = a / BOARD_SIZE;
@@ -337,6 +338,7 @@ uint64_t getBits4x4(uint64_t* board, int row, int col)
 	}
 	return bits;
 }
+/*
 uint64_t getBits(uint64_t* board, int row, int col, int dim)
 {
 	uint64_t bits = 0;
@@ -347,6 +349,43 @@ uint64_t getBits(uint64_t* board, int row, int col, int dim)
 	}
 	return bits;
 }
+*/
+uint64_t getBits(uint64_t* board, int row, int col, int rowDim, int colDim)
+{
+	uint64_t bits = 0;
+	uint64_t mask = ((1 << colDim) - 1) << (PAD + col);
+	for(int a = 0; a < rowDim; a++)
+	{
+		bits |= (((uint64_t) (board[a + row + PAD] & mask)) >> (PAD + col)) << (a * colDim);
+	}
+	return bits;
+}
+void getBitsLarge(uint64_t* board, uint64_t* bitsSpace, int row, int col, int rowDim, int colDim, int keyDivisions)
+{
+	for(int a = 0; a < keyDivisions; a++)
+	{
+		bitsSpace[a] = getBits(board, row + (rowDim / keyDivisions) * a, col, rowDim / keyDivisions, colDim);
+	}
+	/*
+	if(rowDim == 12)
+	{
+		bitsSpace[0] = getBits(board, row, col, 5, colDim);
+		bitsSpace[1] = getBits(board, row + 5, col, 5, colDim);
+		bitsSpace[2] = getBits(board, row + 10, col, 5, colDim);
+	}
+	else if(rowDim == 10)
+	{
+		bitsSpace[0] = getBits(board, row, col, rowDim / 2, colDim);
+		bitsSpace[1] = getBits(board, row + rowDim / 2, col, rowDim / 2, colDim);
+	}
+	else if(rowDim == 9)
+	{
+		bitsSpace[0] = getBits(board, row, col, 4, colDim);
+		bitsSpace[1] = getBits(board, row + 4, col, 5, colDim);
+	}
+	*/
+}
+
 
 uint64_t getBits5x5(uint64_t* board, int row, int col)
 {
