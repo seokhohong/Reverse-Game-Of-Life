@@ -1,6 +1,6 @@
 Reverse Game Of Life
 ====================
-Dec 2013-Mar 2014: Entry into the Reverse Game Of Life competition on Kaggle.com, finishing 1st place.
+Dec 2013-Mar 2014: Entry into the Reverse Game Of Life competition on Kaggle.com, finishing 1st place under pseudoname Miranda.
 
 https://www.kaggle.com/c/conway-s-reverse-game-of-life
 
